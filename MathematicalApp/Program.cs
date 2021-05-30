@@ -30,11 +30,11 @@ namespace MathematicalApp
             }
         }
 
-        static decimal Sum(decimal[] paramDoubleArray)
+        static decimal Sum(decimal[] paramNumbersArray)
         {
             decimal total = 0;
 
-            foreach (var number in paramDoubleArray)
+            foreach (var number in paramNumbersArray)
             {
                 total += number;
             }
@@ -42,23 +42,23 @@ namespace MathematicalApp
             return total;
         }
 
-        static decimal Subtract(decimal[] paramDoubleArray)
+        static decimal Subtract(decimal[] paramNumbersArray)
         {
-            decimal total = paramDoubleArray[0];
+            decimal total = paramNumbersArray[0];
 
-            for (int i = 1; i < paramDoubleArray.Length; i++)
+            for (int i = 1; i < paramNumbersArray.Length; i++)
             {
-                total -= paramDoubleArray[i];
+                total -= paramNumbersArray[i];
             }
 
             return total;
         }
 
-        static decimal Multiplicate(decimal[] numbersArray)
+        static decimal Multiplicate(decimal[] paramNumbersArray)
         {
-            decimal total = 0;
+            decimal total = paramNumbersArray[0];
 
-            foreach (var number in numbersArray)
+            foreach (var number in paramNumbersArray)
             {
                 total *= number;
             }
@@ -66,15 +66,15 @@ namespace MathematicalApp
             return total;
         }
 
-        private static decimal[] ObtainNumbersInput(decimal[] numbersArray)
+        private static decimal[] ObtainNumbersInput(decimal[] paramNumbersArray)
         {
-            for (int i = 0; i < numbersArray.Length; i++)
+            for (int i = 0; i < paramNumbersArray.Length; i++)
             {
                 Console.WriteLine("Add input " + (i + 1));
-                numbersArray[i] = Convert.ToDecimal(Console.ReadLine());
+                paramNumbersArray[i] = Convert.ToDecimal(Console.ReadLine());
             }
 
-            return numbersArray;
+            return paramNumbersArray;
         }
     }
 }
